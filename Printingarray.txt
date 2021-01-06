@@ -1,0 +1,17 @@
+#inlcude <stdio.h>
+void main()
+{
+int a[20],i,n;
+printf("Hey!please give the input:-\n");
+scanf("%d",&n);
+printf("Give the user input here:-\n");
+for(i=0;i<n;i++)
+{
+	scanf("%d",&a[i]); //here we were stroing the elements
+}
+printf("The result of the given item were:\n");
+for(i=0;i<n;i++)
+	{
+	printf("%d \n",a[i]); //here we were retriving the elements we stored	
+	}
+}
