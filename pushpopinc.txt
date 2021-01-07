@@ -1,0 +1,86 @@
+#include <stdio.h>
+int stack[100], top=-1;
+int size, i;
+
+void push(int elem)
+{
+	//stack overflow
+	if(size==top+1)
+	{
+		printf("This is stack overflow");
+	}
+	else
+	{
+		top++;
+		stack[top]=elem;
+		printf("Pushed %d \n",elem);
+	}
+}
+void pop()
+{
+	//stack underflow
+	//top=-1
+	if(top==-1)
+	{
+		printf("This was stack underflow");
+	}
+	else
+	{
+		printf("poped element was %d\n",stack[top]);
+		top--;
+	}
+}
+
+void display()
+{
+	if(top==-1)
+	{
+		printf("Stack ubderflow! I had no elements to show you");
+	}
+	else
+	{
+		printf("The element are\n");
+		for(i=top;i>=0;i--)
+		{
+			printf("%d \n",i);
+		}
+	}
+}
+int main()
+{
+	int choice, elem, k;
+	printf("Enter the stack size:\n");
+	scanf("%d",&size);
+	//menu driven program
+	do
+	{
+		printf("Enter your choice \n1.Push \n2.Pop \n3.Display\n");
+		scanf("%d",&choice);	//3 options
+		switch(choice) 		//3 options
+		{
+			case 1:
+			printf("Please enter the element you want to push:-\n");
+			scanf("%d",&elem);
+			push(elem);
+			break;
+			
+			case 2:
+			pop();
+			break;
+
+			case 3:
+			display();
+			break;
+
+			default:
+			printf("Invalid argument\n");
+			break;
+		}
+		printf("Do you wish to continue?\n1.Yes \n2.No");
+		scanf("%d",&k);
+	}
+	while(k==1);
+}
+
+		
+		
