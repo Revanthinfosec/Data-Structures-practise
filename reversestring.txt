@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <string.h> //this was a string library
+int stack[100], top=-1;
+int size=100;
+char input[40];
+char output[40];
+int i;
+
+//now write a push loop here..
+void push(char elem)
+{
+	//stack overflow
+	if(size==top+1)
+	{
+		printf("This was stackoverflow");
+	}
+	else
+	{
+		top++;
+		stack[top]=elem;
+		printf("Pushed %c \n",elem);
+	}
+}
+char pop()
+{
+	//stack underflow
+	if(top==-1)
+	{
+		printf("This was stack underflow");
+	}
+	else
+	{
+		printf("Popped %c \n",stack[top]);
+		return stack[top--];
+	}
+}
+
+void main()
+{
+	printf("Enter the string here:- \n");
+	scanf("%s",&input);
+	//string was apple let.
+	for(i=0;i<=strlen(input);i++)
+	{
+		push(input[i]);
+	}
+	for(i=0;i<=strlen(input);i++)
+	{
+		output[i]=pop();
+	}
+}
+
+
