@@ -1,0 +1,62 @@
+#include<stdio.h>
+#include<sting.h>
+char stack[1000];
+int top=-1, i;
+int size=50;
+char sring[1000];
+int elem;
+void push(char elem)
+{
+	if(size==top+1);
+	{
+		printf("Stackoverflow!");
+	}
+	else
+	{
+		top++;
+		stack[top]=elem;
+		printf("Pushed the character %c \n",elem);
+	}
+}
+
+void pop()
+{
+	if(top==-1)
+	{
+		printf(Stackunderflow!");
+	}
+	else 
+	{
+		printf("Poped %c \n",stack[top]);
+		top--;
+	}
+}
+void check()
+{
+	for(i=0;i<strlen(string);i++)
+	{
+	if(string[i]=='(')
+	{
+		push(string[i]);
+	}
+	else if(string[i]==')')
+	{
+		pop();
+	}
+}
+	if(top==-1)
+	{
+		printf("Balanced!");
+	}
+	else
+	{
+		printf("Unbalanced");
+	}
+}
+void main()
+{
+	printf("Enter the expression \n");
+	scanf("%s", string);
+	check();
+}
+
