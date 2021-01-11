@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct Node
+{
+	int data;
+	struct Node* next;
+};
+void main()
+{
+	struct Node* start;
+	start=(struct Node*)malloc(sizeof(struct Node));
+	struct Node* newNode1;
+	newNode1=(struct Node*)malloc(sizeof(struct Node));
+	newNode1->data=50;
+	newNode1->next=NULL;
+	printf("%d-NULL",newNode1->data);
+}
